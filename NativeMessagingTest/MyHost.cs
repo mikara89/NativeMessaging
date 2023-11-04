@@ -1,5 +1,5 @@
 ﻿using NativeMessaging;
-using Newtonsoft.Json.Linq;
+using System.Text.Json.Nodes;
 
 namespace NativeMessagingTest
 {
@@ -17,9 +17,10 @@ namespace NativeMessagingTest
 
         }
 
-        protected override void ProcessReceivedMessage(JObject data)
+        protected override void ProcessReceivedMessage(JsonObject data)
         {
             SendMessage(data);
         }
+
     }
 }
