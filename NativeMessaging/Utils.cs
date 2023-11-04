@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace NativeMessaging
+﻿namespace NativeMessaging
 {
     internal static class Utils
     {
@@ -9,21 +7,21 @@ namespace NativeMessaging
             get
             {
                 return Path.Combine(
-                    AssemblyLoadDirectory(), 
+                    AssemblyLoadDirectory(),
                     "native-messaging.log");
             }
         }
 
         static public string AssemblyLoadDirectory()
         {
-            string? codeBase = Assembly.GetEntryAssembly()?.Location;
+            string? codeBase = AppContext.BaseDirectory;
 
             if (codeBase == null)
             {
                 throw new InvalidOperationException(
                     "Invalid assembly directory.");
             }
-
+            Console.WriteLine("codeBase: [" + codeBase + "]");
             UriBuilder uri = new UriBuilder(codeBase);
             string path = Uri.UnescapeDataString(uri.Path);
 

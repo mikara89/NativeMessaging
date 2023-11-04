@@ -193,7 +193,7 @@ namespace NativeMessaging
         {
             foreach (ChromiumBrowser browser in SupportedBrowsers)
             {
-                browser.Unregister(Hostname);
+                browser.Unregister(Hostname, ManifestPath);
             }
         }
         #endregion
