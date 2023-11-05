@@ -21,7 +21,7 @@
                 throw new InvalidOperationException(
                     "Invalid assembly directory.");
             }
-            Console.WriteLine("codeBase: [" + codeBase + "]");
+
             UriBuilder uri = new UriBuilder(codeBase);
             string path = Uri.UnescapeDataString(uri.Path);
 
